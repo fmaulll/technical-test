@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { timelineItems } from "../../data/timeline-business-items";
+import { timelineItems } from "../../../public/data/timeline-business-items";
 
 const OwnerInformationForm = () => {
   const [ownerName, setOwnerName] = useState("");
@@ -184,6 +184,7 @@ const ImageInput = styled.input`
   border: 1px solid #d6d6d6;
   border-radius: 10px;
   height: 195px;
+  padding: 85px 400px;
   margin: 17px 0 20px 0;
   @media (max-width: 768px) {
     padding: 75px 150px;

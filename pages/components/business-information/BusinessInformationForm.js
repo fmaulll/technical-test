@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { timelineItems } from "../../data/timeline-account-items";
+import { timelineItems } from "../../../public/data/timeline-account-items";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 const BusinessInformationForm = () => {
@@ -135,7 +135,14 @@ const BusinessInformationForm = () => {
                 <FormOption value="Malaysia">Malaysia</FormOption>
               </LocationSelect>
             </LocationFormContainer>
-            <LocationFormContainer>
+            <LocationFormContainer
+              style={{
+                marginLeft: isMobile ? "0" : "30px",
+              }}
+              onChange={(e) => {
+                setState(e.target.value);
+              }}
+            >
               <FormLabel>Province / State</FormLabel>
               <LocationSelect
                 style={{
@@ -143,10 +150,6 @@ const BusinessInformationForm = () => {
                     isEmpty && state === ""
                       ? "1px solid red"
                       : "1px solid #d6d6d6",
-                  marginLeft: isMobile ? "0" : "30px",
-                }}
-                onChange={(e) => {
-                  setState(e.target.value);
                 }}
               >
                 <FormOption selected disabled>
@@ -157,15 +160,18 @@ const BusinessInformationForm = () => {
                 <FormOption value="Jawa Timur">Jawa Barat</FormOption>
               </LocationSelect>
             </LocationFormContainer>
-            <LocationFormContainer>
+            <LocationFormContainer
+              style={{
+                marginLeft: isMobile ? "0" : "30px",
+              }}
+            >
               <FormLabel>City</FormLabel>
               <LocationSelect
                 style={{
                   border:
-                    isEmpty && city === ""
+                    isEmpty && state === ""
                       ? "1px solid red"
                       : "1px solid #d6d6d6",
-                  marginLeft: isMobile ? "0" : "30px",
                 }}
                 onChange={(e) => {
                   setCity(e.target.value);
@@ -279,6 +285,7 @@ const ImageInput = styled.input`
   border: 1px solid #d6d6d6;
   border-radius: 10px;
   height: 195px;
+  padding: 85px 390px;
   margin: 17px 0 20px 0;
   @media (max-width: 768px) {
     padding: 75px 150px;

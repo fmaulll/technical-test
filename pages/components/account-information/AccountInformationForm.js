@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { timelineItems } from "../../data/timeline-review-items";
+import { timelineItems } from "../../../public/data/timeline-review-items";
 
 const AccountInformationForm = () => {
   const [email, setEmail] = useState("");

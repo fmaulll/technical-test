@@ -2,7 +2,7 @@ import React from 'react'
 import Link from "next/link";
 import styled from "styled-components";
 import HeadForFont from "./components/HeadForFont";
-import { timelineItems } from "./data/timeline-owner-items";
+import { timelineItems } from "../public/data/timeline-owner-items";
 
 export default function Home() {
   const nextButtonHandler = () => {
@@ -90,6 +90,7 @@ const Title = styled.div`
   width: 610px;
   text-align: center;
   line-height: normal;
+  font-size: 48px;
   @media (max-width: 768px) {
     font-size: 32px;
     max-width: 350px;
